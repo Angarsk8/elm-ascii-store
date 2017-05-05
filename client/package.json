@@ -1,0 +1,10 @@
+{
+  "name": "todo_app_elm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Andrés García <andresa.garciah621@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.18.1"
+  }
+}

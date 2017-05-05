@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f6f6f6;
+}
+
+#wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+#wrapper > footer {
+  height: 70px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 70px;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.grid > *:not(.loading) {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+.card {
+  flex: none;
+  border-radius: 1px;
+  width: calc((100% - 40px)/4);
+  margin-bottom: calc(40px / 3);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+    0 1px 5px 0 rgba(0,0,0,0.12),
+    0 3px 1px -2px rgba(0,0,0,0.2);
+  transition: box-shadow 350ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),
+    0 1px 10px 0 rgba(0,0,0,0.12),
+    0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+.card .product {
+  height: 150px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.card .product pre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  transition: transform 350ms ease;
+}
+
+.card:hover .product pre {
+  transform: scale(1.1);
+}
+
+.card .description {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.card .description .price {
+  position: absolute;
+  right: 10px;
+  top: -50%;
+  border-radius: 50%;
+  background: #fac801;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 75%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+    0 1px 5px 0 rgba(0,0,0,0.12),
+    0 3px 1px -2px rgba(0,0,0,0.2);
+  transition: all 350ms ease;
+}
+
+.card .description .price:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),
+    0 1px 7px 0 rgba(0,0,0,0.12),
+    0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: calc((100% - 30px) / 3);
+    margin-bottom: calc(30px / 2);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: calc((100% - 20px) / 2);
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
